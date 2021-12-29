@@ -1,8 +1,8 @@
 {
-  "name": "servera",
+  "name": "serverc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "worker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bull": "^4.2.0",
-    "express": "^4.17.2",
-    "express-http-proxy": "^1.6.3",
     "ioredis": "^4.28.2"
   }
 }
