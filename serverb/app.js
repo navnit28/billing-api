@@ -12,9 +12,7 @@ app.use("/external/*",proxy('http://localhost:3000',{
     },
     userResDecorator: function(proxyRes, proxyResData, userReq, userRes) {
         if(proxyRes.statusCode=="200"){
-            //data=JSON.parse(proxyResData.toSring());
-            const data=JSON.parse(proxyResData.toString());
-            console.log(data);
+            const data=proxyRes;
             BillingQueue.add(data.headers,{})
         }
         return proxyResData;

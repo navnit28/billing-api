@@ -1,4 +1,3 @@
-const BillingHandler=require('../helpers/billingQueue');
 exports.pingController=async(req,res)=>{
     //console.log(req.body.userId);
     // if(!req.body.userId){
@@ -11,8 +10,10 @@ exports.pingController=async(req,res)=>{
     const date=new Date();
     const month=date.getMonth()+1;
     const year=date.getFullYear();
+    res.setHeader('month',month);
+    res.setHeader('year', year);
+    res.setHeader('userid',userid);
     res.status(200).json({
-        headers:{userid,month,year},
         message:"Hello world"
     });
 };
